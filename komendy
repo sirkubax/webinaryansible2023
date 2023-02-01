@@ -1,0 +1,31 @@
+
+
+#na hoscie
+sudo mkdir ~/katalog/
+sudo chmod 777 ~/katalog/
+
+sudo docker  run  -d  --name nasz_kontener -p 8080:8080 -v ~/katalog:/katalog ubuntu:22.04  sh -c 'sleep 300d'
+docker ps
+docker exec -ti nasz_kontener bash
+
+#stop i kiedys start kontenera
+#docker stop nasz_kontener
+#docker start nasz_kontener
+
+#czyszczenie
+#docker stop nasz_kontener
+#docker rm nasz_kontener
+
+
+# w docker
+apt-get update
+apt-get install python3 virtualenv
+
+
+
+#rownowazne komendy
+apt-get install ansible 
+pip install ansible
+snap install ansible
+brew install ansible
+#mozna tez np: git clone https://github.com/ansible/ansible.git; cd ansible; pip3 install .

@@ -1,0 +1,30 @@
+---
+- name: App Deployment
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install pip
+      apt:
+        name: python-pip
+        state: latest
+
+    - name: Install Flask
+      pip:
+        name: Flask
+        state: latest
+
+    - name: Clone the application repository
+      git:
+        repo: https://github.com/flask-sample-app.git
+        dest: /opt/flask-sample-app
+        clone: yes
+
+    - name: Set environment variables
+      shell: |
+        echo "export FLASK_APP=flaskr" >> /etc/environment
+        echo "export FLASK_ENV=development" >> /etc/environment
+
+    - name: Start the Flask application
+      shell: "source /etc/environment && flask run --host=0.0.0.0"
+      args:
+        chdir: /opt/flask-sample-app
