@@ -1,0 +1,8 @@
+---
+- name: Install and configure Apache web server
+  #hosts: web
+  hosts: localhost
+  become: yes
+  roles:
+    #- gerlingguy.apache  # zobaczmy blad
+    - geerlingguy.apache
