@@ -16,10 +16,23 @@ docker exec -ti nasz_kontener bash
 #docker stop nasz_kontener
 #docker rm nasz_kontener
 
+apt-get update
+apt-get install python3
+pip install ansible
 
-# w docker
+#opcja pod instalacje pip
 apt-get update
 apt-get install python3 virtualenv
+#pip install ansible
+source source_me.sh
+
+#
+# w docker - dla flask !
+apt-get update
+apt-get install python3 virtualenv
+cd aplikacja
+source source_me.sh
+
 
 
 
