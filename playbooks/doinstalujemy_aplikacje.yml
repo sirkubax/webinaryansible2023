@@ -1,0 +1,13 @@
+- hosts: localhost
+
+  tasks:
+
+    - name: zainstaluj podstawowe aplikacje
+      apt:
+        name: "{{ item }}"
+        state: latest  #czy napewno to dobry pomysl?
+      loop:
+        - curl
+        - vim
+        - net-tools
+        
