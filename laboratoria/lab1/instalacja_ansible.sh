@@ -8,7 +8,9 @@
 #docker ps -a 
 #docker start nasz_kontener
 
-apt-get update
+# opcjonalnie
+#apt-get update
+
 apt-get install -y python3-pip
 pip3 install ansible
 ansible --version

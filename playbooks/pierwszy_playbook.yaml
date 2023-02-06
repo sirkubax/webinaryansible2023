@@ -1,0 +1,14 @@
+- hosts: localhost
+
+  tasks:
+
+    - name: sprawdz srodowisko wykonujac modul ping
+      ping:
+
+    - name: utworz tymczasowy katalog na logi
+      file:
+        path: /tmp/nasze_logi
+        state: directory
+
+    - name: wykonaj komende shell i zapisz jej wynik do pliku
+      shell: date >> /tmp/nasze_logi/data_wykonania_komendy.log
