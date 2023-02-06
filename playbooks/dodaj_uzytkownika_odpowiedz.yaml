@@ -1,0 +1,26 @@
+---
+- name: User Management
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Create a new user
+      user:
+        name: newuser
+        password: "$y$j9T$cumgRao/O3IpfbFq0Jbzd.$fhU5ApS3pyMbbE7AejdoksnqAjMHPYLjAwCu6ew12F7"  #kuba1234
+        state: present
+
+    - name: Add the new user to the sudo group
+      user:
+        name: newuser
+        groups: sudo
+        append: yes
+
+    - name: Add group dev
+      group:
+        name: dev
+
+    - name: Add user to a group
+      user:
+        name: newuser
+        groups: dev
+        append: yes

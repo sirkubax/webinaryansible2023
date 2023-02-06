@@ -10,4 +10,24 @@
         - curl
         - vim
         - net-tools
+        - apache2
+        - iproute2
+
+    - name: dopisz udawane hosty do /etc/hosts
+      lineinfile:
+        regexp: line='127.0.0.3 bastion'
+        line: line='127.0.0.3 bastion'
+        path: /etc/hosts
+        
+    - name: dopisz udawane hosty do /etc/hosts
+      lineinfile:
+        regexp: line='127.0.0.3 produkcja01'
+        line: line='127.0.0.3 produkcja01'
+        path: /etc/hosts
+        
+    - name: dopisz udawane hosty do /etc/hosts
+      lineinfile:
+        regexp: line='127.0.0.4 produkcja02'
+        line: line='127.0.0.4 produkcja02'
+        path: /etc/hosts
         

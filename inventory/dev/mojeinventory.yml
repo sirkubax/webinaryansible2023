@@ -1,0 +1,10 @@
+all:
+  vars:
+    przyklad_zmiennej_globalnej: 'z inventory yaml'
+  hosts:
+    bastion:
+    produkcja01:
+  moja_grupa_przykladowa:
+    hosts:
+      produkcja01:
+      produkcja02:
