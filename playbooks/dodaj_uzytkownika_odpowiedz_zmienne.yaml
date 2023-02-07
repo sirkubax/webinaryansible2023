@@ -7,6 +7,7 @@
     nazwa_uzytkownika: newuser_kolejny
     password: "$y$j9T$cumgRao/O3IpfbFq0Jbzd.$fhU5ApS3pyMbbE7AejdoksnqAjMHPYLjAwCu6ew12F7"  #kuba1234
     grupa_aplikacji: dev
+    przyklad_zmiennej_globalnej: 'przyklad_zmiennej_globalnej przeciazaonej w vars playbooka'
 
   tasks:
     - name: Create a new user
@@ -30,3 +31,7 @@
         name: "{{ newuser_kolejny }}"
         groups: "{{ grupa_aplikacji }}"
         append: yes
+
+    - name: wypisz na ekran zawartosc zmiennej
+      debug:
+        msg: "zmienna przyklad_zmiennej_globalnej to: {{ przyklad_zmiennej_globalnej }}"

@@ -1,0 +1,13 @@
+---
+- name: Install and configure Apache web server
+  #hosts: web
+  hosts: localhost
+  become: yes
+
+  roles:
+    #- gerlingguy.apache  # zobaczmy blad
+    - geerlingguy.apache
+
+  tasks:
+    - name: wykonaj curl
+      shell: curl 127.0.0.1:80 -v
