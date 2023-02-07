@@ -1,0 +1,26 @@
+---
+- name: App Deployment
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install pip
+      apt:
+        name: python3-pip
+        state: latest
+
+    - name: Install Flask
+      pip:
+        name: Flask
+        state: latest  # czy to sluszne?
+
+    - name: Start the Flask application
+      #shell: "source /etc/environment && flask run --host=0.0.0.0"
+      #shell: "python3 aplikacja.py "  - zawisnie bez & - moze chcemy o tym porozmawiac...
+      shell: "python3 aplikacja.py &"
+      args:
+        chdir: /katalog/webinaryansible2023/aplikacja/
+
+    - name: Generate Template index.html
+      template:
+        src: aplikacja/templates/index.html
+        dest: /katalog
