@@ -22,5 +22,9 @@
 
     - name: Generate Template index.html
       template:
-        src: aplikacja/templates/index.html
+        src: /katalog/webinaryansible2023/playbooks/aplikacja/templates/index.html
         dest: /katalog
+      vars:
+        zmienne:
+          jaka_zmienna: 1234
+          kolejny_parametr: "a to jakis string"
