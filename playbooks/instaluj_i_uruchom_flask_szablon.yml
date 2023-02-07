@@ -22,7 +22,7 @@
 
     - name: Generate Template index.html
       template:
-        src: /katalog/webinaryansible2023/playbooks/aplikacja/templates/index.html
+        src: /katalog/webinaryansible2023/aplikacja/templates/index.html
         dest: /katalog
       vars:
         zmienne:
