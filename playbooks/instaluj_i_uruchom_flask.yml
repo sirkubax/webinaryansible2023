@@ -11,22 +11,11 @@
     - name: Install Flask
       pip:
         name: Flask
-        state: latest
-
-    #- name: Clone the application repository
-    #  git:
-    #    repo: https://github.com/flask-sample-app.git
-    #    dest: /opt/flask-sample-app
-    #    clone: yes
-
-    #- name: Set environment variables
-    #  shell: |
-    #    echo "export FLASK_APP=flaskr" >> /etc/environment
-    #    echo "export FLASK_ENV=development" >> /etc/environment
+        state: latest  # czy to sluszne?
 
     - name: Start the Flask application
       #shell: "source /etc/environment && flask run --host=0.0.0.0"
       #shell: "python3 aplikacja.py "  - zawisnie bez & - moze chcemy o tym porozmawiac...
       shell: "python3 aplikacja.py &"
       args:
-        chdir: /katalog_w_obrazie//aplikacja
+        chdir: /katalog/webinaryansible2023/aplikacja/
