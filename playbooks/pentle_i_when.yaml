@@ -1,5 +1,8 @@
 - hosts: localhost
 
+  vars:
+    log: debugujemy
+
   tasks:
 
     - name: sprawdz srodowisko wykonujac modul ping
@@ -10,5 +13,71 @@
         path: /tmp/nasze_logi
         state: directory
 
-    - name: wykonaj komende shell i zapisz jej wynik do pliku
-      shell: date >> /tmp/nasze_logi/data_wykonania_komendy.log
+    - name: wykonaj komende shell i zachowaj wyjscie w zmiennej
+      shell: echo "napisz na ekran: Dzien dobry"
+      register: do_mojej_zmiennej
+
+    - name: wykonaj komende shell, wypisz na ekran jesli
+      shell: echo "poprzednia komenda zakonczyla sie zgodnie z planem; echo restartujemy baze; #service mysql restart"
+      when:
+        - '"Dzien dobry" in do_mojej_zmiennej.stdout'
+        - '{{ log }} == "debugjemy"'
+        - 'log == "debugjemy"'
+
+    - name: wypisz na ekran w pentli kolejne elementy
+      debug:
+        msg: "To jest obiekt {{ item }}"
+      loop:
+        - pierwszy
+        - 2
+        - 3
+        - jakis
+
+    - name: apt-get install przyklad
+      apt:
+        name: 
+          - apache2
+          - htop
+          - vim
+
+       #mozna to rozumiec jako 
+       #apt-get install -y apache2 htop vim
+       #ale tylko niektore programy umieja takie rzeczy
+
+    - name: apt-get install przyklad z pentla
+      apt:
+        name: "{{ item }}"
+      loop:
+        - apache2
+        - htop
+        - vim
+
+       #wiekszosc modulow wymagala by wielokrotnego uruchomienia z przekazaniem elementow listy, kolejno
+       #odpowiadalo by to ponizszym komenda
+       #apt-get install -y apache2
+       #apt-get install -y htop
+       #apt-get install -y vim
+
+    - name: utworz 5 katalogow
+      file:
+        name: "/tmp/{{ item }}"
+        state: directory
+      loop:
+        - a
+        - ab
+        - ac
+        - ad
+        - aeeeee
+
+    - name: usun czesc katalogow
+      file:
+        name: "/tmp/{{ item.name }}"
+        state: "{{ item.state | default('directory') }}"
+      loop:
+        - name: a
+        - { name: ab, state: absent }
+        - name: ac
+        - name: ad
+          state: absent
+        - name: aeeeee
+          state: directory

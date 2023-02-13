@@ -1,13 +1,23 @@
 #!/bin/bash
 
-
 cd /katalog/webinaryansible2023/
-mkdir -p roles/cat_site/tasks/
-mkdir -p roles/cat_site/templates/
-mkdir -p roles/cat_site/defaults/
-touch roles/cat_site/*/main.yml
-touch roles/cat_site/defaults/main.yml
-touch roles/cat_site/tasks/main.yml
-touch roles/cat_site/templates/index.html.j2
+echo 'my_vault_password' > .vault_pass
+echo '.vault_pass' >> .gitignore
 
-ansible-playbook playbooks/playbook_rola_cat_site.yml
+export ANSIBLE_VAULT_PASSWORD_FILE=./.vault_pass
+
+echo "to jest moj sekret, zapiszemy go do pliku" > moj_sekret.txt
+cat moj_sekret.txt 
+
+ansible-vault encrypt moj_sekret.txt 
+
+cat moj_sekret.txt 
+
+cat ansible.cfg 
+echo "vault_password_file = ./.vault_pass" >> ansible.cfg 
+cat ansible.cfg 
+
+ansible-vault view moj_sekret.txt 
+
+cat moj_sekret.txt 
+

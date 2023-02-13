@@ -1,0 +1,17 @@
+---
+- name: Create an HTML site with a cat image
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create the HTML file
+      copy:
+        content: |
+          OK
+        dest: /tmp/flaga_instalacji
+
+
+    - name: Start the web server
+      shell: "echo {{ [1, 2, 5] | max }}" 
+      
+     
+
