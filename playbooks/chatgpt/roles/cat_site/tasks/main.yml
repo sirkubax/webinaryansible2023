@@ -5,9 +5,13 @@
     src: index.html.j2
     dest: /var/www/html/index.html
 
+- name: Stop the web server
+  #command: python -m http.server 8080
+  shell: kill -9 $(pgrep 'python3 -m http.server' -f)
+  become: yes
+
 - name: Start the web server
   #command: python -m http.server 8080
   shell: python3 -m http.server 8080 -d /var/www/html/ &
-
   become: yes
 
