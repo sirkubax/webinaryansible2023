@@ -1,3 +1,0 @@
-# roles/cat_site/defaults/main.yml
-cat_image_url: https://pixabay.com/images/cats-3063403_960_720.jpg
-
