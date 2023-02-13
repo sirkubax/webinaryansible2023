@@ -1,0 +1,12 @@
+# roles/cat_site/tasks/main.yml
+---
+- name: Create the HTML file
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+
+- name: Start the web server
+  #command: python -m http.server 8080
+  shell: python -m http.server 8080 &
+  become: yes
+

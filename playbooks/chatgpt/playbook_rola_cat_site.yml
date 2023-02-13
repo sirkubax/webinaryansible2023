@@ -1,0 +1,6 @@
+---
+- name: Create an HTML site with a cat image
+  hosts: localhost
+  gather_facts: no
+  roles:
+    - cat_site
