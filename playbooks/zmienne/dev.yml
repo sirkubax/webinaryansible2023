@@ -1,2 +1,3 @@
 zmienna_sss: 1234_dev
 zmienna_sekret: "{{ zmienna_sekret_vault }}"
+haslo_do_bazy: "{{ haslo_do_bazy_vault }}"
