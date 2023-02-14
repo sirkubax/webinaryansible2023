@@ -6,6 +6,7 @@
     cat_image_url: https://www.example.com/cat.jpg
     zmienne:
       jakas_zmienna: 'jakas_wartosc_1234'
+      kolejny_parametr: 192.168.1.1
 
   tasks:
     - name: wygeneruj dokument
