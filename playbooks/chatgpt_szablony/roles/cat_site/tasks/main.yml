@@ -9,6 +9,7 @@
   #command: python -m http.server 8080
   shell: kill -9 $(pgrep 'python3 -m http.server' -f)
   become: yes
+  ignore_errors: true
 
 - name: Start the web server
   #command: python -m http.server 8080

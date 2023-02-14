@@ -1,5 +1,5 @@
 ---
-- name: Create an HTML site with a cat image
+- name: konfiguracja
   hosts: localhost
   gather_facts: no
   vars:
@@ -10,7 +10,7 @@
       pass: haslo1234
 
   tasks:
-    - name: wygeneruj dokument
+    - name: wygeneruj konfiguracje
       template:
         src: konfiguracja.txt
         dest: /etc/konfiguracja.txt
