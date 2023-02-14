@@ -12,6 +12,6 @@
         dest: /var/www/html/index.html
 
     - name: Start the web server
-      shell: python3 -m http.server 8080 -d /var/www/html/ &
+      shell: python3 -m http.server 8080 -d /var/www/html/ >> /tmp/log 2>&1 &
       become: yes
 

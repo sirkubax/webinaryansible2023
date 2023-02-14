@@ -1,2 +1,22 @@
-{% if false %} 
-{% endif %}
+Dzien dobry
+
+Pod podanym adresem znajdzesz zdjecie kota: {{ cat_image_url }}
+
+To taki krotki przyklad generowania dokumentu z szablonu silnikiem jinja2
+
+Mozemy zobaczyc jeszcze uzycie instrukcji if oraz for
+
+
+dynamicznie wstawilismy tutaj wartosc zmiennej zmienna.jaka_zmienna, i jest to:
+{{ zmienne.jaka_zmienna }}
+
+a caly slownik przekazany tutaj to
+{{ zmienne }}
+
+
+a teraz jako przyklad, wypiszemy w pentli numery od 1 do 9, i przy numerze 6 wypiszemy wartosc zmienne.kolejny_parametr
+
+{% for i in range(10) %}
+  {{ i }}  {% if i == 6 %} {{ zmienne.kolejny_parametr }} {% endif %}
+{% endfor %}
+

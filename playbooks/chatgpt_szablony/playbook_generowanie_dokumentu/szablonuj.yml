@@ -1,9 +1,11 @@
 ---
-- name: Create an HTML site with a cat image
+- name: generuj dokument
   hosts: localhost
   gather_facts: no
   vars:
     cat_image_url: https://www.example.com/cat.jpg
+    zmienne:
+      jakas_zmienna: 'jakas_wartosc_1234'
 
   tasks:
     - name: wygeneruj dokument
