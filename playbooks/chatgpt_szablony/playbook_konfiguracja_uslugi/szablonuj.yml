@@ -6,12 +6,7 @@
     cat_image_url: https://www.example.com/cat.jpg
 
   tasks:
-    - name: Create the HTML file
+    - name: wygeneruj dokument
       template:
-        src: index.html.j2
-        dest: /var/www/html/index.html
-
-    - name: Start the web server
-      command: python -m http.server 80
-      become: yes
-
+        src: konfiguracja.txt
+        dest: /var/www/konfiguracja.txt

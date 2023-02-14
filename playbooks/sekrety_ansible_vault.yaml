@@ -1,14 +1,20 @@
 - hosts: localhost
 
+  vars_files:
+    - jakies_zmienne.yml
+    - "{{ srodowisko }}.yml" 
+    - "{{ srodowisko }}_vault.yml" 
+
   tasks:
 
     - name: sprawdz srodowisko wykonujac modul ping
       ping:
 
-    - name: utworz tymczasowy katalog na logi
-      file:
-        path: /tmp/nasze_logi
-        state: directory
+    - name: wypisz haslo do bazy
+      debug:
+        msg: "{{ haslo_do_bazy }}"
 
-    - name: wykonaj komende shell i zapisz jej wynik do pliku
-      shell: date >> /tmp/nasze_logi/data_wykonania_komendy.log
+    - name: doladuj zmienne
+      include_vars:
+        path: zmienn_kolejne.yml
+

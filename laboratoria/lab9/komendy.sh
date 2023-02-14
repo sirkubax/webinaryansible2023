@@ -1,5 +1,18 @@
 #!/bin/bash
 
-ansible-playbook playbooks/instaluj_i_uruchom_flask.yml
+cd /katalog/webinaryansible2023/chatgpt_szablony
 
-curl -kv 127.0.0.1:8080
+ansible-playbook playbook_i_szablon_html/szablonuj.yml
+
+ansible-playbook playbook_generowane_dokumentu/szablonuj.yml
+
+ansible-playbook playbook_konfiguracja_uslug/szablonuj.yml
+
+
+
+ansible-playbook szablon_inne_przyklady/przyklady_w_playbook.yml
+
+
+
+
+ansible-playbook playbook_rola_cat_site.yml

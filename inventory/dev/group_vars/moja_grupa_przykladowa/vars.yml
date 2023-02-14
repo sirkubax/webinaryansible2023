@@ -1,0 +1,1 @@
+haslo_do_bazy: "{{ haslo_do_bazy_vault }}"
