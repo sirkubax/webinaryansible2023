@@ -4,9 +4,9 @@
     srodowisko: dev
 
   vars_files:
-    - zmienne/jakies_zmienne.yml
-    - "zmienne/{{ srodowisko }}.yml" 
-    - "zmienne/{{ srodowisko }}_vault.yml" 
+    - vars/zmienne/jakies_zmienne.yml
+    - "vars/zmienne/{{ srodowisko }}.yml" 
+    - "vars/zmienne/{{ srodowisko }}_vault.yml" 
 
   tasks:
 
