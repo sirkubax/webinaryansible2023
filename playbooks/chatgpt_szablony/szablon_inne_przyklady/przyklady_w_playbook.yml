@@ -1,16 +1,16 @@
 ---
-- name: Create an HTML site with a cat image
+- name: przyklad szablonow w playbook
   hosts: localhost
   gather_facts: no
   tasks:
-    - name: Create the HTML file
+    - name: wypisz na ekran
       copy:
         content: |
           OK
         dest: /tmp/flaga_instalacji
 
 
-    - name: Start the web server
+    - name: echo z szablonu i filtra jinja2
       shell: "echo {{ [1, 2, 5] | max }}" 
       
      
