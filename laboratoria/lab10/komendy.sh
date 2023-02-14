@@ -12,3 +12,7 @@ touch roles/cat_site/templates/index.html.j2
 
 cd /katalog/webinaryansible2023/playbooks/chatgpt_szablony
 ansible-playbook playbooks/playbook_rola_cat_site.yml
+
+
+cd /katalog/webinaryansible2023/
+ansible-playbook playbooks/rola_katalog.yml -vv

@@ -1,0 +1,2 @@
+zmienna_sss: 1234_dev
+zmienna_sekret: "{{ zmienna_sekret_vault }}"

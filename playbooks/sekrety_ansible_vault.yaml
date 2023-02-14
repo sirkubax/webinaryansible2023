@@ -1,9 +1,12 @@
 - hosts: localhost
 
+  vars:
+    srodowisko: dev
+
   vars_files:
-    - jakies_zmienne.yml
-    - "{{ srodowisko }}.yml" 
-    - "{{ srodowisko }}_vault.yml" 
+    - zmienne/jakies_zmienne.yml
+    - "zmienne/{{ srodowisko }}.yml" 
+    - "zmienne/{{ srodowisko }}_vault.yml" 
 
   tasks:
 
