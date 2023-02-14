@@ -13,6 +13,6 @@
 
 - name: Start the web server
   #command: python -m http.server 8080
-  shell: python3 -m http.server 8080 -d /var/www/html/ &
+  shell: python3 -m http.server 8080 -d /var/www/html/ >> /tmp/log.txt 2>&1 &
   become: yes
 
