@@ -3,7 +3,7 @@
   hosts: localhost
   gather_facts: no
   vars:
-    cat_image_url: https://www.example.com/cat.jpg
+    cat_image_url: https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg
 
   tasks:
     - name: Create the HTML file

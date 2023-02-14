@@ -3,10 +3,14 @@
   hosts: localhost
   gather_facts: no
   vars:
-    cat_image_url: https://www.example.com/cat.jpg
+    srodowisko: dev
+    db:
+      address: nasza_baza.com.pl
+      user: admin
+      pass: haslo1234
 
   tasks:
     - name: wygeneruj dokument
       template:
         src: konfiguracja.txt
-        dest: /var/www/konfiguracja.txt
+        dest: /etc/konfiguracja.txt

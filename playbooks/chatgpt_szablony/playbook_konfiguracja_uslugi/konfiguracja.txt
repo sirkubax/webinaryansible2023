@@ -1,5 +1,14 @@
-{% if false %} 
-{% endif %}
 
-{% if for element in elements %} 
+[default]
+{% for i in range(3) %}
+db.{{ i }}.ustawienia:
+    address: {{ db.address }}
+    user: {{ db.user }}
+    pass: {{ db.pass }}
+
 {% endfor %}
+
+
+{% if srodowisko == 'dev' %} 
+mock_db: true 
+{% endif %}
