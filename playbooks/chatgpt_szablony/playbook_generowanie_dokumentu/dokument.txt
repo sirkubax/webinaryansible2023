@@ -8,7 +8,7 @@ Mozemy zobaczyc jeszcze uzycie instrukcji if oraz for
 
 
 dynamicznie wstawilismy tutaj wartosc zmiennej zmienna.jaka_zmienna, i jest to:
-{{ zmienne.jaka_zmienna }}
+{{ zmienne.jakas_zmienna }}
 
 a caly slownik przekazany tutaj to
 {{ zmienne }}
