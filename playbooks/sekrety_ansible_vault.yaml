@@ -19,5 +19,5 @@
 
     - name: doladuj zmienne
       include_vars:
-        path: zmienn_kolejne.yml
+        file: zmienn_kolejne.yml
 
