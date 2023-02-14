@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /katalog/webinaryansible2023/chatgpt_szablony
+cd /katalog/webinaryansible2023/playbooks/chatgpt_szablony
 
 ansible-playbook playbook_i_szablon_html/szablonuj.yml
 
