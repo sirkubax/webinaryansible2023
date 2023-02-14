@@ -11,8 +11,3 @@ ansible-playbook playbook_konfiguracja_uslugi/szablonuj.yml
 
 
 ansible-playbook szablon_inne_przyklady/przyklady_w_playbook.yml
-
-
-
-
-ansible-playbook playbook_rola_cat_site.yml

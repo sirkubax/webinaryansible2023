@@ -1,0 +1,5 @@
+- name: utworz tymczasowy katalog na logi
+  file:
+    path: "{{ sciezka_logi }}"
+    state: directory
+    mode: "{{ mode }}

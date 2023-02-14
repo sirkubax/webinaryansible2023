@@ -1,0 +1,14 @@
+- hosts: localhost
+
+  vars:
+    sciezka_logi: /tmp/logi/
+    mode: 755
+
+  tasks:
+
+    - name: sprawdz srodowisko wykonujac modul ping
+      ping:
+
+  roles:
+    - role: rola_katalog
+
