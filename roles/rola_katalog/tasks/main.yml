@@ -2,4 +2,4 @@
   file:
     path: "{{ sciezka_logi }}"
     state: directory
-    mode: "{{ mode }}
+    mode: "{{ mode }}"
