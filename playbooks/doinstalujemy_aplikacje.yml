@@ -4,14 +4,17 @@
 
     - name: zainstaluj podstawowe aplikacje
       apt:
-        name: "{{ item }}"
-        state: latest  #czy napewno to dobry pomysl?
+        name: "{{ item.name }}"
+        state: "{{ item.state |default('present') }}"
       loop:
-        - curl
-        - vim
-        - net-tools
-        - apache2
-        - iproute2
+        - name: curl
+          state: latest
+        - name: vim
+        - name: net-tools
+        - name: apache2
+          state: absent
+        - name: iproute2
+          state: latest
 
     - name: dopisz udawane hosty do /etc/hosts
       shell: echo "127.0.0.3 bastion produkcja01" >> /etc/hosts

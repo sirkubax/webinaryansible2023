@@ -1,0 +1,18 @@
+all:
+  vars:
+    przyklad_zmiennej_globalnej: 'z inventory yaml'
+  hosts:
+    bastion:
+    produkcja01:
+  children:
+    moja_grupa_przykladowa:
+      hosts:
+        produkcja01:
+        produkcja02:
+    prawdziwe_serwery:
+      hosts:
+        1.2.3.4:
+        5.6.7.8:
+      vars:
+        ansible_connection: ssh
+        ansible_ssh_private_key_file: ~/.ssh/id_rsa

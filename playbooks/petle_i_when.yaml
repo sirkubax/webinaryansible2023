@@ -33,6 +33,10 @@
         - 3
         - jakis
 
+
+
+
+
     - name: apt-get install przyklad
       apt:
         name: 
@@ -43,14 +47,16 @@
        #mozna to rozumiec jako 
        #apt-get install -y apache2 htop vim
        #ale tylko niektore programy umieja takie rzeczy
-
+       
     - name: apt-get install przyklad z pentla
       apt:
-        name: "{{ item }}"
+        name: "{{ item.name }}={{ item.version }}"
+
       loop:
-        - apache2
-        - htop
-        - vim
+        - name: apache2
+          version: 2.41
+        - name: htop
+        - name: vim
 
        #wiekszosc modulow wymagala by wielokrotnego uruchomienia z przekazaniem elementow listy, kolejno
        #odpowiadalo by to ponizszym komenda
@@ -75,9 +81,16 @@
         state: "{{ item.state | default('directory') }}"
       loop:
         - name: a
+
         - { name: ab, state: absent }
+
         - name: ac
+
         - name: ad
           state: absent
+
         - name: aeeeee
           state: directory
+
+
+

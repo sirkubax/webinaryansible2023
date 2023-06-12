@@ -1,0 +1,2 @@
+przyklad_zmienna_z: 'group_vars/all/zmienna.yml'
+ansible_connection: local

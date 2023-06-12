@@ -3,3 +3,4 @@
     path: "{{ sciezka_logi }}"
     state: directory
     mode: "{{ mode }}"
+    owner: root

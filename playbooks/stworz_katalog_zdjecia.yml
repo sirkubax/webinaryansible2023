@@ -1,0 +1,24 @@
+---
+- name: Create and manage the photos directory
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Create the photos directory
+      file:
+        path: ~/photos
+        state: directory
+        mode: "0755"
+      register: directory_created
+
+    - name: Set permissions on the photos directory
+      file:
+        path: ~/photos
+        mode: "0755"
+      when: directory_created.changed
+
+    - name: Display directory creation status
+      debug:
+        msg: "The photos directory has been created."
+      when: directory_created.changed == true
+
